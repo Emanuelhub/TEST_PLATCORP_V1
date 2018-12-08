@@ -40,12 +40,6 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- Chamar H2 somente profile de testes  -->
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -62,7 +56,18 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	
+	<repositories>
+		<repository>
+	        <id>spring-libs-release</id>
+	        <name>Spring​ Releases​</name>
+	        <url>https://repo.spring.io/libs-release​</url>
+	        <snapshots>
+	          <enabled>false</enabled>
+	        </snapshots>
+	     </repository>
+	</repositories>
+	
 	<build>
 		<plugins>
 			<plugin>
