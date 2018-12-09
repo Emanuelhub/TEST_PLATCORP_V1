@@ -1,4 +1,4 @@
-package br.com.test;
+package br.com.api;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

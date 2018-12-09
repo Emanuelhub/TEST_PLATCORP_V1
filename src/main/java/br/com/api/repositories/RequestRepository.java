@@ -1,8 +1,8 @@
-package br.com.test.repositories;
+package br.com.api.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.test.entities.Request;
+import br.com.api.entities.Request;
 
 public interface RequestRepository extends CrudRepository<Request, Long>{
 

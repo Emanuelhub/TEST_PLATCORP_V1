@@ -1,4 +1,4 @@
-package br.com.test.entities;
+package br.com.api.entities;
 
 import java.io.Serializable;
 
