@@ -23,9 +23,6 @@ public class Request implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@OneToOne(mappedBy="requestCreate")
-	private Cliente cliente;
-	
 	@Column(name="ip_origem",nullable=false)
 	private String ipOrigem;
 	
@@ -48,8 +45,6 @@ public class Request implements Serializable{
 	@Column(name="temp_maxima",nullable=true)
 	private Float maxima;
 
-	private String img;
-	
 	@PrePersist
 	public void prePersist() {
 		data =  new Date();
@@ -58,8 +53,7 @@ public class Request implements Serializable{
 	@Override
 	public String toString() {
 		return "Request [id=" + id + ", ipOrigem=" + ipOrigem + ", latitude=" + latitude + ", longitude=" + longitude
-				+ ", data=" + data + ", cidade=" + cidade + ", minima=" + minima + ", maxima=" + maxima + ", img=" + img
-				+ "]";
+				+ ", data=" + data + ", cidade=" + cidade + ", minima=" + minima + ", maxima=" + maxima + "]";
 	}
 	
 	public Long getId() {
@@ -125,13 +119,4 @@ public class Request implements Serializable{
 	public void setMaxima(Float maxima) {
 		this.maxima = maxima;
 	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
-	}	
-
 }
