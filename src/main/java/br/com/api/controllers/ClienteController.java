@@ -28,7 +28,7 @@ public class ClienteController {
 	@Autowired
 	ClienteServico clienteServico;
 	
-	@GetMapping(value ="/clientes/{id}")
+	@GetMapping(value ="/clientes/{id}",produces = "application/json")
 	@ResponseBody
 	@ResponseStatus(code=HttpStatus.OK)
 	@Cacheable(value = "findById")
@@ -37,7 +37,7 @@ public class ClienteController {
 	
 	}
 
-	@GetMapping(value ="/clientes")
+	@GetMapping(value ="/clientes",produces = "application/json")
 	@ResponseBody
 	public Iterable<ClienteDTO> getAll() {
 		return clienteServico.findAll();
@@ -46,7 +46,7 @@ public class ClienteController {
 	@ResponseBody
 	@PostMapping(path="/clientes", consumes = "application/json", produces = "application/json")
 	@ResponseStatus(code=HttpStatus.CREATED)
-	public ClienteDTO novoCliente(@RequestBody ClienteDTO novoClienteDTO, HttpServletRequest request) {
+	public ClienteDTO novo(@RequestBody ClienteDTO novoClienteDTO, HttpServletRequest request) {
 		RequestDTO req = new RequestDTO();       
         req.setIpOrigem(getIp(request));
         novoClienteDTO.setRequestCreate(req);
@@ -55,7 +55,7 @@ public class ClienteController {
 	
 	@PutMapping("/clientes/{id}")
 	@ResponseStatus(code=HttpStatus.OK)
-	ClienteDTO replaceEmployee(@RequestBody ClienteDTO newCliente, @PathVariable Long id) {
+	ClienteDTO update(@RequestBody ClienteDTO newCliente, @PathVariable Long id) {
 		newCliente.setId(id);
 		return clienteServico.save(newCliente);
 	}
