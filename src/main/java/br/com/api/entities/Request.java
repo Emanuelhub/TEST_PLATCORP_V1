@@ -31,9 +31,6 @@ public class Request implements Serializable{
 	@Column(name="longitude",nullable=true)
 	private Double longitude;
 	
-	@Column(name="cidade",nullable=true)
-	private String cidade;
-	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="data",nullable=false)
 	private Date data;
@@ -52,7 +49,7 @@ public class Request implements Serializable{
 	@Override
 	public String toString() {
 		return "Request [id=" + id + ", ipOrigem=" + ipOrigem + ", latitude=" + latitude + ", longitude=" + longitude
-				+ ", data=" + data + ", cidade=" + cidade + ", minima=" + minima + ", maxima=" + maxima + "]";
+				+ ", data=" + data + ", minima=" + minima + ", maxima=" + maxima + "]";
 	}
 	
 	public Long getId() {
@@ -85,14 +82,6 @@ public class Request implements Serializable{
 
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
 	}
 
 	public Date getData() {

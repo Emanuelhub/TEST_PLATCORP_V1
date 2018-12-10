@@ -7,7 +7,6 @@ public class RequestDTO {
 	private String ipOrigem;
 	private Double latitude;
 	private Double longitude;
-	private String cidade;
 	private Date data;
 	private Float minima;
 	private Float maxima;
@@ -40,12 +39,7 @@ public class RequestDTO {
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
-	public String getCidade() {
-		return cidade;
-	}
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
+	
 	public Date getData() {
 		return data;
 	}
@@ -68,7 +62,7 @@ public class RequestDTO {
 	@Override
 	public String toString() {
 		return "RequestDTO [id=" + id + ", ipOrigem=" + ipOrigem + ", latitude=" + latitude
-				+ ", longitude=" + longitude + ", cidade=" + cidade + ", data=" + data + ", minima=" + minima
+				+ ", longitude=" + longitude + ", data=" + data + ", minima=" + minima
 				+ ", maxima=" + maxima + "]";
 	}
 }

@@ -1,5 +1,8 @@
 package br.com.api.dtos;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.PositiveOrZero;
+
 public class ClienteDTO {
 	private Long id;
 	private String nome;
@@ -19,12 +22,15 @@ public class ClienteDTO {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	@NotEmpty(message = "Nome do cliente não pode ser vazio.")
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	@PositiveOrZero(message="Idade inválida, valor deve ser maior ou igual a zero.")
 	public Integer getIdade() {
 		return idade;
 	}
